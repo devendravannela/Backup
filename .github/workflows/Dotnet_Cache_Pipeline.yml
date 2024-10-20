@@ -26,10 +26,10 @@ jobs:
 
     # Cache NuGet packages
     - name: Cache NuGet packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.nuget/packages  # Path to NuGet cache
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.sln') }}  # Key based on OS and .csproj hash
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }} # Key based on OS and .csproj hash
         restore-keys: |
           ${{ runner.os }}-nuget-
 
