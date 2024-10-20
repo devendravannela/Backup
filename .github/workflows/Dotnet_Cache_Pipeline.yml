@@ -22,10 +22,7 @@ jobs:
 
     # Restore NuGet packages
     - name: Restore dependencies
-      run: dotnet restore --verbosity detailed
-
-    - name: List NuGet cache
-      run: ls -R ~/.nuget/packages
+      run: dotnet restore
 
     # Cache NuGet packages
     - name: Cache NuGet packages
