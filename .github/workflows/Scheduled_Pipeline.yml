@@ -1,7 +1,7 @@
 name: Deploy Project
 on:
     schedule:
-      - cron: '40 * * * *'
+      - cron: '45 11 * * *'
 jobs:
   test:
     runs-on: ubuntu-latest
