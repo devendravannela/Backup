@@ -24,11 +24,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
 
+    - name: List NuGet cache
+      run: ls -R ~/.nuget/packages
+
     # Cache NuGet packages
     - name: Cache NuGet packages
       uses: actions/cache@v4
       with:
-        path: ${{ github.workspace }}/.nuget/packages  # Path to NuGet cache
+        path: ~/.nuget/packages  # Path to NuGet cache
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }} # Key based on OS and .csproj hash
         restore-keys: |
           ${{ runner.os }}-nuget-
