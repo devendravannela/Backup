@@ -21,13 +21,13 @@ jobs:
         dotnet-version: '8.x'  # Specify your version of .NET Core
 
     # Cache NuGet packages
-#    - name: Cache NuGet packages
-#      uses: actions/cache@v3
-#      with:
-#        path: ~/.nuget/packages  # Path to NuGet cache
-#        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}  # Key based on OS and .csproj hash
-#        restore-keys: |
-#          ${{ runner.os }}-nuget-
+    - name: Cache NuGet packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.nuget/packages  # Path to NuGet cache
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}  # Key based on OS and .csproj hash
+        restore-keys: |
+          ${{ runner.os }}-nuget-
 
     # Restore NuGet packages
     - name: Restore dependencies
