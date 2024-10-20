@@ -29,7 +29,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.nuget/packages  # Path to NuGet cache
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}  # Key based on OS and .csproj hash
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.sln') }}  # Key based on OS and .csproj hash
         restore-keys: |
           ${{ runner.os }}-nuget-
 
